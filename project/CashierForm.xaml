@@ -1,0 +1,100 @@
+﻿<Window x:Class="HyperMarket.CashierForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HyperMarket"
+        mc:Ignorable="d" Height="628" Width="1000" FontSize="16" ResizeMode="NoResize" WindowStyle="None" Loaded="Window_Loaded">
+    <Grid Margin="0,0,753,0" Background="#FF89B0AE">
+        <Grid Margin="0,0,-1395,688" Background="#FF89B0AE">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="227*"/>
+                <ColumnDefinition Width="568*"/>
+                <ColumnDefinition Width="838*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Button x:Name="CreateBillBtn" Content="Create Bill" HorizontalAlignment="Center" Margin="0,252,0,0" VerticalAlignment="Top" Width="247" Height="58" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Microsoft Sans Serif" FontWeight="Bold" RenderTransformOrigin="0.507,-1.008" Click="CreateBillBtn_Click"/>
+        <Grid Margin="0,0,-756,0" Height="54" VerticalAlignment="Top" Background="#FF89B0AE">
+            <Image HorizontalAlignment="Left" Height="55" Margin="929,0,0,0" VerticalAlignment="Center" Width="59" Stretch="Fill" Source="/x_80px.png" OpacityMask="Black" MouseDown="Image_MouseDown"/>
+        </Grid>
+        <Button x:Name="CustomerBtn" Content="Customer" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Top" Width="247" Height="54" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Microsoft Sans Serif" FontWeight="Bold" RenderTransformOrigin="0.387,1.757" Click="CustomerBtn_Click"/>
+        <Button x:Name="DailyBillsBtn" Content="Daily Bills" HorizontalAlignment="Center" Margin="0,439,0,0" VerticalAlignment="Top" Width="247" Height="54" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Microsoft Sans Serif" FontWeight="Bold" RenderTransformOrigin="0.627,-1.977" Click="DailyBillsBtn_Click"/>
+        <Label Content="Casher" Margin="47,27,10,0" VerticalAlignment="Top" RenderTransformOrigin="-17.087,-9.634" FontFamily="Ravie" FontSize="36" FontWeight="Bold" Height="64"/>
+        <Button x:Name="LogOutBtn" Content="Log Out" HorizontalAlignment="Center" Margin="0,544,0,0" VerticalAlignment="Top" Width="247" Height="57" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="24" FontFamily="Segoe UI Black" FontWeight="Normal" RenderTransformOrigin="0.627,-1.977" Click="LogOutBtn_Click"/>
+        <Grid x:Name="CreateBillPanal" Margin="275,106,-737,0" AutomationProperties.Name="CreateBillGrid" d:IsHidden="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="418*"/>
+                <ColumnDefinition Width="291*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="CBForSearchCustmoer" HorizontalAlignment="Left" Margin="123,29,0,0" VerticalAlignment="Top" Width="193" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="32" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" BorderThickness="0,0,0,0" SelectionChanged="CBForSearchCustmoer_SelectionChanged"/>
+            <Label Content="Customer" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <ComboBox x:Name="CBForSearchCategory" HorizontalAlignment="Left" Margin="123,96,0,0" VerticalAlignment="Top" Width="193" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="32" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" BorderThickness="0,0,0,0" SelectionChanged="CBForSearchCategory_SelectionChanged"/>
+            <ComboBox x:Name="CBForSearchProduct" HorizontalAlignment="Left" Margin="123,165,0,0" VerticalAlignment="Top" Width="193" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="33" RenderTransformOrigin="0.504,0.583" BorderBrush="#FFBEE3DB" Background="#FF89B0AE" BorderThickness="0,0,0,0" Padding="5,5,5,5"/>
+            <Label Content="Category" HorizontalAlignment="Left" Margin="13,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label Content="Products" HorizontalAlignment="Left" Margin="13,165,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="92" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label Content="Quantiy" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="92" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <TextBox x:Name="QuantityTxtBox" HorizontalAlignment="Left" Margin="123,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" BorderBrush="#FFBEE3DB" BorderThickness="5,5,5,5" PreviewTextInput="QuantityTxtBox_PreviewTextInput"/>
+            <Button x:Name="ButtonForAdd" Content="Add" HorizontalAlignment="Left" Margin="7,310,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="95" BorderThickness="5,5,5,5" ClipToBounds="True" Click="ButtonForAdd_Click"/>
+            <Button x:Name="ButtonforPay" Content="Pay" HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="111" BorderThickness="5,5,5,5" Click="ButtonforPay_Click"/>
+            <Button x:Name="ButtonForDelete" Content="Delete" HorizontalAlignment="Left" Margin="260,310,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="111" BorderThickness="5,5,5,5" Click="ButtonForDelete_Click"/>
+            <Button x:Name="ButtonForEdit" Content="Edit" HorizontalAlignment="Left" Margin="123,310,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="111" BorderThickness="5,5,5,5" Click="ButtonForEdit_Click"/>
+            <Button x:Name="BTNForPrint" Content="Print" HorizontalAlignment="Left" Margin="260,452,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="111" RenderTransformOrigin="2.834,0.524" BorderThickness="5,5,5,5" Click="BTNForPrint_Click"/>
+            <Button x:Name="BtnforPayWithPoints" Content="Pay With Points" HorizontalAlignment="Left" Margin="201,385,0,0" VerticalAlignment="Top" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" FontSize="18" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Height="39" Width="170" RenderTransformOrigin="0.803,0.432" BorderThickness="5,5,5,5" Click="BtnforPayWithPoints_Click"/>
+            <DataGrid x:Name="CustomerBillGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="394,47,0,44" Background="#FFBEE3DB" Grid.ColumnSpan="2"/>
+            <Label Content="Total Price :" HorizontalAlignment="Left" Margin="10,465,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="TotalPriceLabel" Content="0" HorizontalAlignment="Left" Margin="147,465,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label Content="Points :" HorizontalAlignment="Left" Margin="394,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" Grid.ColumnSpan="2"/>
+            <Label x:Name="ValueOfPointlbl" Content="0" HorizontalAlignment="Left" Margin="89,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.23" Width="108" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" Grid.Column="1"/>
+        </Grid>
+        <Image HorizontalAlignment="Left" Height="54" Margin="9,254,0,0" VerticalAlignment="Top" Width="55" OpacityMask="Black" Stretch="Fill" Source="/bill_64px.png"/>
+        <Image HorizontalAlignment="Left" Height="54" Margin="9,340,0,0" VerticalAlignment="Top" Width="55" Source="/customer_80px.png" Stretch="Fill"/>
+        <Image HorizontalAlignment="Left" Height="54" Margin="10,439,0,0" VerticalAlignment="Top" Width="55" OpacityMask="Black" Stretch="Fill" Source="/bill_64px.png"/>
+        <Image HorizontalAlignment="Left" Height="54" Margin="10,547,0,0" VerticalAlignment="Top" Width="55" OpacityMask="Black" Source="/Logout_24px.png" RenderTransformOrigin="0.571,0.385"/>
+        <Image HorizontalAlignment="Left" Height="127" Margin="45,96,0,0" VerticalAlignment="Top" Width="136" Stretch="Fill" Source="/shopping_cart_80px (1).png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-1.351"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Grid x:Name="DailyBillsPanal" Margin="265,59,-727,27" d:IsHidden="True">
+            <Label Content="Total Gained" HorizontalAlignment="Left" Margin="57,26,0,0" VerticalAlignment="Top" Width="144" Height="42" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="NoOfBiils" Content="0" HorizontalAlignment="Left" Margin="539,67,0,0" VerticalAlignment="Top" Width="144" Height="42" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <Label x:Name="TotalGainedmoney" Content="0" HorizontalAlignment="Left" Margin="113,72,0,0" VerticalAlignment="Top" Width="144" Height="42" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" RenderTransformOrigin="0.126,0.526"/>
+            <Label Content="Number Of Bills" HorizontalAlignment="Left" Margin="493,25,0,0" VerticalAlignment="Top" Width="169" Height="42" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <DataGrid x:Name="Bills" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-10,114,10,10" Background="#FFBEE3DB"/>
+        </Grid>
+        <Grid x:Name="CustomerPanel" Margin="285,59,-727,27">
+
+            <Button x:Name="AddCustome"  Content="Add" HorizontalAlignment="Left" Margin="86,244,0,0" VerticalAlignment="Top" Height="47" Width="131" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" BorderThickness="5,5,5,5" Click="AddCustome_Click"/>
+
+            <Button x:Name="SaveCustomer" Content="Clear" HorizontalAlignment="Left" Margin="344,244,0,0" VerticalAlignment="Top" Height="47" Width="132" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" Background="#FF89B0AE" BorderBrush="#FFBEE3DB" BorderThickness="5,5,5,5" Click="SaveCustomer_Click"/>
+            <Label Content="Name" HorizontalAlignment="Left" Margin="48,92,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="93" Height="44">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.502"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Content="Phone" HorizontalAlignment="Left" Margin="48,163,0,0" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" RenderTransformOrigin="0.5,0.5" Width="93" Height="44">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.502"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox x:Name="CustomerName"  TextAlignment="Left" HorizontalAlignment="Left" Margin="152,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="31" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18" />
+            <TextBox x:Name="CustomerPhone" TextAlignment="Left" HorizontalAlignment="Left" Margin="152,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Height="29" FontFamily="Microsoft Sans Serif" FontWeight="Bold" FontSize="18"/>
+            <DataGrid x:Name="AddedCustomerData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="-10,312,10,0" Background="#FFBEE3DB"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="1.jpg" />
+    <None Remove="2.jpg" />
+    <None Remove="3.jpg" />
+    <None Remove="billing_machine_32px.png" />
+    <None Remove="bill_100px.png" />
+    <None Remove="bill_64px.png" />
+    <None Remove="customer_80px.png" />
+    <None Remove="hyperimg.jpg" />
+    <None Remove="Logout_24px.png" />
+    <None Remove="shopping_cart_80px %281%29.png" />
+    <None Remove="shopping_cart_80px %282%29.png" />
+    <None Remove="shopping_cart_promotion_100px.png" />
+    <None Remove="x_80px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bill_64px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="hyperimg.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="customer_80px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Logout_24px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="shopping_cart_80px (1).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shopping_cart_80px (2).png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="shopping_cart_promotion_100px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x_80px.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="devexpress.wpf.charts" Version="21.2.4" />
+    <PackageReference Include="devexpress.wpf.core" Version="21.2.4" />
+    <PackageReference Include="devexpress.wpf.grid.core" Version="21.2.4" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
+  </ItemGroup>
+
+</Project>
